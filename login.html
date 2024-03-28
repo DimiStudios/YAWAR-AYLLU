@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="img/LOGO REDONDO YAW .png" rel="icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url(img/carousel-1.jpg) no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .login-container {
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+
+  h2 {
+    color: #fff;
+    margin-bottom: 30px;
+  }
+
+  input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+    outline: none;
+  }
+
+  input[type="submit"] {
+    background-color: #dc3545;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #dc3545;
+  }
+
+  .form-footer {
+    margin-top: 20px;
+    color: #fff;
+  }
+
+  .form-footer a {
+    color: #fff;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+<div class="login-container">
+  <h2>Iniciar Sesión</h2>
+  <form id="login-form">
+    <input type="text" name="username" placeholder="Usuario" required><br>
+    <input type="password" name="password" placeholder="Contraseña" required><br>
+    <input type="submit" value="Ingresar">
+  </form>
+  <div class="form-footer">
+  </div>
+</div>
+
+<script>
+  document.getElementById("login-form").addEventListener("submit", function(event){
+    event.preventDefault();
+    var username = this.elements["username"].value;
+    var password = this.elements["password"].value;
+    if (username == "marketing" && password == "yaww5"){
+        window.location.href =  "";
+    } if (username == "recursos humanos" && password == "yaww4"){
+        window.location.href = "";
+    } else{
+        alert("Selecciona una opción válida");
+    }
+    alert("Usuario: " + username + "\nContraseña: " + password);
+  });
+</script>
+
+</body>
+</html>
