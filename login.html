@@ -78,6 +78,16 @@
       color: #fff;
       text-decoration: none;
     }
+
+    /* Agregar estilo para el ícono de "ver contraseña" */
+    .toggle-password {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #fff;
+    }
   </style>
 </head>
 <body>
@@ -85,7 +95,13 @@
     <h2>Iniciar Sesión</h2>
     <form id="login-form">
       <input type="text" name="username" placeholder="Usuario" required><br>
-      <input type="password" name="password" placeholder="Contraseña" required><br>
+      <input type="password" name="password" id="password" placeholder="Contraseña" required>
+      <!-- Agregar el checkbox para "ver contraseña" -->
+      <label for="toggle-password" class="toggle-password">
+        <i class="far fa-eye"></i>
+      </label>
+      <input type="checkbox" id="toggle-password" style="display:none;">
+      <br>
       <input type="submit" value="Ingresar">
     </form>
     <div class="form-footer">
@@ -93,6 +109,14 @@
   </div>
 
   <script>
+    document.querySelector(".toggle-password").addEventListener('mousedown', function(event) {
+      document.getElementById("password").type = "text";
+    });
+
+    document.querySelector(".toggle-password").addEventListener('mouseup', function(event) {
+      document.getElementById("password").type = "password";
+    });
+
     document.getElementById("login-form").addEventListener("submit", function(event){
       event.preventDefault();
       var username = this.elements["username"].value;
