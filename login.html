@@ -109,6 +109,14 @@
   </div>
 
   <script>
+    document.querySelector(".toggle-password").addEventListener('mousedown', function(event) {
+      document.getElementById("password").type = "text";
+    });
+
+    document.querySelector(".toggle-password").addEventListener('mouseup', function(event) {
+      document.getElementById("password").type = "password";
+    });
+
     document.getElementById("login-form").addEventListener("submit", function(event){
       event.preventDefault();
       var username = this.elements["username"].value;
@@ -128,7 +136,6 @@
       } else{
           alert("Selecciona una opción válida");
       } 
-      alert("Usuario: " + username + "\nContraseña: " + password);
     });
   </script>
 
