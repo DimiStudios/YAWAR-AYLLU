@@ -15,6 +15,22 @@ th {
 tr:hover {
     background-color: #f5f5f5;
 }
+button {
+    padding: 10px 20px;
+    background-color: #cc2828;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block; /* Para que ocupen el ancho disponible */
+    margin: 0 auto; /* Esto centrará los botones horizontalmente */
+    margin-bottom: 10px; /* Espacio entre los botones */
+}
+
+button:hover {
+    background-color: #831313;
+}
+
   button {
     padding: 10px 20px;
     background-color: #cc2828;
