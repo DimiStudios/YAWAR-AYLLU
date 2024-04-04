@@ -511,6 +511,10 @@
         </div>
     </div>
 
+    <div class="search-container">
+        <input type="text" id="searchInput" onkeyup="searchVolunteers()" placeholder="Busca a voluntarios">
+    </div>
+
     <div class="volunteers-container">
         <div class="volunteer">
             <img src="img/LOGO REDONDO YAW .png" alt="Volunteer 1">
@@ -615,5 +619,21 @@
         </div>
     </div>
 
+    <script>
+        function searchVolunteers() {
+            var input = document.getElementById("searchInput").value.toUpperCase();
+            var volunteers = document.getElementsByClassName("volunteer");
+        
+            for (var i = 0; i < volunteers.length; i++) {
+                var name = volunteers[i].getElementsByTagName("h2")[0];
+                var txtValue = name.textContent || name.innerText;
+                if (txtValue.toUpperCase().indexOf(input) > -1) {
+                    volunteers[i].style.display = "";
+                } else {
+                    volunteers[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 </body>
 </html>
